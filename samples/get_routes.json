@@ -1,0 +1,1160 @@
+[
+	{
+		"Key": "21e9baad-ce1e-45c9-99de-e10707723215",
+		"Name": "Express to G.C.",
+		"ShortName": "100A",
+		"Description": "Express to G.C.",
+		"PatternList": [
+			{
+				"Key": "3cdedd0a-a539-4da2-add6-d020c8fcdc75",
+				"Name": "100A Express to G.C.",
+				"ShortName": "100A",
+				"Description": "100A Express to G.C.",
+				"LineType": "Dash",
+				"LineColor": "#009900",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "256fdca7-7a80-4687-9186-91764cbb18cd",
+					"DirectionName": "N",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "100A - Express to G.C.",
+		"RouteType": null
+	},
+	{
+		"Key": "35db1699-1d2a-41b0-ad58-de799ee93aaa",
+		"Name": "Express to D.T.",
+		"ShortName": "100B",
+		"Description": "Express to D.T.",
+		"PatternList": [
+			{
+				"Key": "58f8fecf-c159-4970-82a2-54ec54c69dd9",
+				"Name": "100B Express to D.T.",
+				"ShortName": "100B",
+				"Description": "100B Express to D.T.",
+				"LineType": "Dash",
+				"LineColor": "#009900",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "bb7f23a0-20bf-4d47-9e9e-d7cb8dc8e4ea",
+					"DirectionName": "S",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "100B - Express to D.T.",
+		"RouteType": null
+	},
+	{
+		"Key": "b87fd079-d810-428e-abb8-e6b91dc8c712",
+		"Name": "Express to G.M. via G.C.",
+		"ShortName": "100C",
+		"Description": "Express to G.M. via G.C.",
+		"PatternList": [
+			{
+				"Key": "8b4b6372-0a0a-47ff-ba1f-36f3431d1b63",
+				"Name": "100C Express to G.M. via G.C.",
+				"ShortName": "100CF",
+				"Description": "100C Express to G.M. via G.C.",
+				"LineType": "Dash",
+				"LineColor": "#009900",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "24db624e-7077-450b-8fca-4c2c50e0a243",
+					"DirectionName": "N",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "100C - Express to G.M. via G.C.",
+		"RouteType": null
+	},
+	{
+		"Key": "95391e65-0dfc-431c-9530-2888d0d2eba3",
+		"Name": "Express to D.T. via G.C.",
+		"ShortName": "100D",
+		"Description": "Express to D.T. via G.C.",
+		"PatternList": [
+			{
+				"Key": "0001418a-2eb7-47ce-88e3-e19f14b5925c",
+				"Name": "100D Express to D.T. via G.C.",
+				"ShortName": "100DF",
+				"Description": "100D Express to D.T. via G.C.",
+				"LineType": "Dash",
+				"LineColor": "#009900",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "bb317c5d-71e0-4d6c-a290-9acdd7570343",
+					"DirectionName": "S",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "100D - Express to D.T. via G.C.",
+		"RouteType": null
+	},
+	{
+		"Key": "d609a6a0-be37-4a9b-9e39-b2f47dcb0ba5",
+		"Name": "Allandale Rec.",
+		"ShortName": "11A",
+		"Description": "Allandale Rec.",
+		"PatternList": [
+			{
+				"Key": "73821a62-4cd7-45dc-bc60-06129016e3f9",
+				"Name": "11A Allandale Rec",
+				"ShortName": "11A ",
+				"Description": "11A Allandale Rec",
+				"LineType": "Solid",
+				"LineColor": "#FFFF00",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "5ac65874-1b04-43f5-b66f-d993d7400ca9",
+					"DirectionName": "N",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "11A - Allandale Rec.",
+		"RouteType": null
+	},
+	{
+		"Key": "82363f84-fcc2-4172-a6d9-397b813019ca",
+		"Name": "Lockhart",
+		"ShortName": "11B",
+		"Description": "Lockhart",
+		"PatternList": [
+			{
+				"Key": "d6c24f8f-825e-4b4a-aa7b-98decd443cec",
+				"Name": "11B Lockhart-Display",
+				"ShortName": "LkhtD",
+				"Description": "11B Lockhart-Display",
+				"LineType": "Solid",
+				"LineColor": "#FFFF00",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "62a23ffc-f4c6-4a36-8ea5-f0acc6920c04",
+					"DirectionName": "S",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "215714b3-d681-43be-b315-c4f7ebf7aad6",
+				"Name": "11B Lockhart",
+				"ShortName": "Lckht",
+				"Description": "11B Lockhart",
+				"LineType": "Solid",
+				"LineColor": "#FFFF00",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "62a23ffc-f4c6-4a36-8ea5-f0acc6920c04",
+					"DirectionName": "S",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "11B - Lockhart",
+		"RouteType": null
+	},
+	{
+		"Key": "295b1385-e882-4abc-8974-4cb6ac661386",
+		"Name": "GEORGIAN MALL",
+		"ShortName": "1A",
+		"Description": "GEORGIAN MALL",
+		"PatternList": [
+			{
+				"Key": "7faa1cb9-27b9-406a-bddd-337729fdd375",
+				"Name": "1A",
+				"ShortName": "1A",
+				"Description": "1A",
+				"LineType": "Solid",
+				"LineColor": "#ec008c",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "6205e0c6-ad08-4b8e-88b2-ff60b741e9a5",
+					"DirectionName": "N",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "1A - GEORGIAN MALL",
+		"RouteType": null
+	},
+	{
+		"Key": "894422f5-94b1-4fa4-8047-6a3548f5c4be",
+		"Name": "WELHAM",
+		"ShortName": "1B",
+		"Description": "WELHAM",
+		"PatternList": [
+			{
+				"Key": "edaa0610-711d-4c3d-a8d0-b82e58c6b6ea",
+				"Name": "1B",
+				"ShortName": "1B",
+				"Description": "1B",
+				"LineType": "Solid",
+				"LineColor": "#ec008c",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "c11fc544-9c04-444d-827e-fb5ad212998c",
+					"DirectionName": "S",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "1B - WELHAM",
+		"RouteType": null
+	},
+	{
+		"Key": "5e798f81-5204-4432-a166-abc74c500e24",
+		"Name": "DUNLOP",
+		"ShortName": "2A",
+		"Description": "DUNLOP",
+		"PatternList": [
+			{
+				"Key": "221e0f33-99b8-44ab-ba6d-724c4d21a9e6",
+				"Name": "2A",
+				"ShortName": "2A",
+				"Description": "2A",
+				"LineType": "Solid",
+				"LineColor": "#ed1c24",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "17f3e12e-9075-40ae-ab74-80e73f9125e5",
+					"DirectionName": "N",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "2A - DUNLOP",
+		"RouteType": null
+	},
+	{
+		"Key": "8df7f27c-aeab-4bc2-8e7c-7e7dcedba567",
+		"Name": "PARK PLACE",
+		"ShortName": "2B",
+		"Description": "PARK PLACE",
+		"PatternList": [
+			{
+				"Key": "c37de0da-37dd-4d02-b1cb-fc034656a539",
+				"Name": "2B",
+				"ShortName": "2B",
+				"Description": "2B",
+				"LineType": "Solid",
+				"LineColor": "#ed1c24",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "4d4dd7ed-a907-4cf5-beee-08ab3fd6f727",
+					"DirectionName": "S",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "2B - PARK PLACE",
+		"RouteType": null
+	},
+	{
+		"Key": "ac477202-976f-48c9-a028-54da735862ea",
+		"Name": "GEORGIAN",
+		"ShortName": "3A",
+		"Description": "GEORGIAN",
+		"PatternList": [
+			{
+				"Key": "14c2dbb4-5229-4692-9afb-0cda6f9583b7",
+				"Name": "3AFM",
+				"ShortName": "3AF",
+				"Description": "3AFM",
+				"LineType": "Solid",
+				"LineColor": "#0089cf",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "5725d220-23fa-4854-b42e-33f0284da24b",
+					"DirectionName": "N",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "abb4676d-b32a-45a4-b122-bdf769daa0d8",
+				"Name": "3A",
+				"ShortName": "3A",
+				"Description": "3A",
+				"LineType": "Solid",
+				"LineColor": "#0089cf",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "5725d220-23fa-4854-b42e-33f0284da24b",
+					"DirectionName": "N",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "3A - GEORGIAN",
+		"RouteType": null
+	},
+	{
+		"Key": "b2f7228f-ec10-4a37-8111-a2f2f0300f47",
+		"Name": "PAINSWICK",
+		"ShortName": "3B",
+		"Description": "PAINSWICK",
+		"PatternList": [
+			{
+				"Key": "e17dcf67-5e58-43fb-8aab-9449072160f2",
+				"Name": "3B",
+				"ShortName": "3B",
+				"Description": "3B",
+				"LineType": "Solid",
+				"LineColor": "#0089cf",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "c858cd43-4db3-4bf3-897f-7f9e8cf74590",
+					"DirectionName": "S",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "3B - PAINSWICK",
+		"RouteType": null
+	},
+	{
+		"Key": "8f1cd940-2bf8-4d71-8565-6040fde7d875",
+		"Name": "EAST BAYFIELD",
+		"ShortName": "4A",
+		"Description": "EAST BAYFIELD",
+		"PatternList": [
+			{
+				"Key": "a4b84109-c09b-4e15-ab94-dec8b053469c",
+				"Name": "4A Full",
+				"ShortName": "4AF",
+				"Description": "4A Full",
+				"LineType": "Solid",
+				"LineColor": "#918bc3",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "194359e5-c0f8-47f8-817a-afa597a69da3",
+					"DirectionName": "N",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "08377a52-b412-460c-9bc1-fc8049962529",
+				"Name": "4A Special",
+				"ShortName": "4AS",
+				"Description": "4A Special",
+				"LineType": "Solid",
+				"LineColor": "#918bc3",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "194359e5-c0f8-47f8-817a-afa597a69da3",
+					"DirectionName": "N",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "4A - EAST BAYFIELD",
+		"RouteType": null
+	},
+	{
+		"Key": "ae6754e0-2b5b-4def-bf12-149858e80980",
+		"Name": "SOUTH GO",
+		"ShortName": "4B",
+		"Description": "SOUTH GO",
+		"PatternList": [
+			{
+				"Key": "7407b27a-2e57-47c3-a514-078459bcf376",
+				"Name": "4B Special - Short",
+				"ShortName": "4BSS",
+				"Description": "4B Special - Short",
+				"LineType": "Solid",
+				"LineColor": "#918bc3",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "a91cd748-c4ec-4144-b0d4-aefbbe5429b3",
+					"DirectionName": "S",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "9ae5f6dc-78a1-420f-9e66-770a0d1b3c02",
+				"Name": "4B Full",
+				"ShortName": "4B F",
+				"Description": "4B Full",
+				"LineType": "Solid",
+				"LineColor": "#918bc3",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "a91cd748-c4ec-4144-b0d4-aefbbe5429b3",
+					"DirectionName": "S",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "56026c4d-4a19-4032-a7ec-8d2c9ef3e491",
+				"Name": "4B Short",
+				"ShortName": "4BSh",
+				"Description": "4B Short",
+				"LineType": "Solid",
+				"LineColor": "#918bc3",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "a91cd748-c4ec-4144-b0d4-aefbbe5429b3",
+					"DirectionName": "S",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "fb921bfe-321f-4f27-a8b1-a353cc3815f9",
+				"Name": "4B Special",
+				"ShortName": "4BSp",
+				"Description": "4B Special",
+				"LineType": "Solid",
+				"LineColor": "#918bc3",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "a91cd748-c4ec-4144-b0d4-aefbbe5429b3",
+					"DirectionName": "S",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "4B - SOUTH GO",
+		"RouteType": null
+	},
+	{
+		"Key": "54440ad8-fa57-429f-99f7-fe4650db4c81",
+		"Name": "BLAKE",
+		"ShortName": "5A",
+		"Description": "BLAKE",
+		"PatternList": [
+			{
+				"Key": "0b878627-6268-4863-8435-032bb7fc1908",
+				"Name": "5A Finish",
+				"ShortName": "5A3",
+				"Description": "5A Finish",
+				"LineType": "Solid",
+				"LineColor": "#8ed8f8",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "4e76bbf2-f2ee-45fc-9276-eb104481eaa2",
+					"DirectionName": "E",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "09acb65d-9e8d-41f2-8a84-1fd9412f0b1d",
+				"Name": "5A",
+				"ShortName": "5A",
+				"Description": "5A",
+				"LineType": "Solid",
+				"LineColor": "#8ed8f8",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "4e76bbf2-f2ee-45fc-9276-eb104481eaa2",
+					"DirectionName": "E",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "7d0a580c-4a7a-4095-9582-a4a8c38c8dcc",
+				"Name": "5A (Partial)",
+				"ShortName": "5AP",
+				"Description": "5A (Partial)",
+				"LineType": "Solid",
+				"LineColor": "#8ed8f8",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "4e76bbf2-f2ee-45fc-9276-eb104481eaa2",
+					"DirectionName": "E",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "5A - BLAKE",
+		"RouteType": null
+	},
+	{
+		"Key": "3f546d69-3521-48cb-8780-8e60ebc24b4e",
+		"Name": "EDGEHILL",
+		"ShortName": "5B",
+		"Description": "EDGEHILL",
+		"PatternList": [
+			{
+				"Key": "6f90c55c-afde-4088-8d90-0e35f128f9b8",
+				"Name": "5B Partial(1)",
+				"ShortName": "5BP1",
+				"Description": "5B Partial(1)",
+				"LineType": "Solid",
+				"LineColor": "#8ed8f8",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "1b50b191-681b-44e7-b737-4fa3417117e3",
+					"DirectionName": "W",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "717b8fcf-8cdc-4fd4-b039-9197a7e7e609",
+				"Name": "5B Partial(2)",
+				"ShortName": "5BP2",
+				"Description": "5B Partial(2)",
+				"LineType": "Solid",
+				"LineColor": "#8ed8f8",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "1b50b191-681b-44e7-b737-4fa3417117e3",
+					"DirectionName": "W",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "7fce5d98-5e72-4261-84c8-a0c235f73b58",
+				"Name": "5B",
+				"ShortName": "5B",
+				"Description": "5B",
+				"LineType": "Solid",
+				"LineColor": "#8ed8f8",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "1b50b191-681b-44e7-b737-4fa3417117e3",
+					"DirectionName": "W",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "5B - EDGEHILL",
+		"RouteType": null
+	},
+	{
+		"Key": "42f00137-bb74-48f5-9538-4bf1812a1884",
+		"Name": "LETITIA",
+		"ShortName": "6A",
+		"Description": "LETITIA",
+		"PatternList": [
+			{
+				"Key": "d15f6957-f355-4771-b36f-18206296c745",
+				"Name": "6A",
+				"ShortName": "6A",
+				"Description": "6A",
+				"LineType": "Solid",
+				"LineColor": "#b2d235",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "8b6b39a4-c308-4e0a-9b0e-b46f71e21ce3",
+					"DirectionName": "CW",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "6A - LETITIA",
+		"RouteType": null
+	},
+	{
+		"Key": "c934caa6-54c2-4128-9450-dbe87eb4612b",
+		"Name": "COLLEGE",
+		"ShortName": "6B",
+		"Description": "COLLEGE",
+		"PatternList": [
+			{
+				"Key": "697d6624-05b5-4ae2-a8c5-a8678bf4b4b1",
+				"Name": "6B",
+				"ShortName": "6B",
+				"Description": "6B",
+				"LineType": "Solid",
+				"LineColor": "#b2d235",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "cff4d093-2f2c-493c-a3d4-94786f26c053",
+					"DirectionName": "CCW",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "6B - COLLEGE",
+		"RouteType": null
+	},
+	{
+		"Key": "1afc8d22-fb58-4059-9538-5dc404864522",
+		"Name": "BELL FARM",
+		"ShortName": "7A",
+		"Description": "BELL FARM",
+		"PatternList": [
+			{
+				"Key": "6308a75a-ef8d-4eba-812f-0266ae783250",
+				"Name": "7A Partial (1)",
+				"ShortName": "7AP1",
+				"Description": "7A Partial (1)",
+				"LineType": "Solid",
+				"LineColor": "#f58220",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "d41ec0e6-1cf4-4cce-b4b6-fa2311d2a306",
+					"DirectionName": "N",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "04428a0a-6608-429e-81bc-550071fe01bf",
+				"Name": "7A",
+				"ShortName": "7A",
+				"Description": "7A",
+				"LineType": "Solid",
+				"LineColor": "#f58220",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "d41ec0e6-1cf4-4cce-b4b6-fa2311d2a306",
+					"DirectionName": "N",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "7A - BELL FARM",
+		"RouteType": null
+	},
+	{
+		"Key": "20231b8e-c994-48e9-9f80-dde041ec24b8",
+		"Name": "BEAR CREEK",
+		"ShortName": "7B",
+		"Description": "BEAR CREEK",
+		"PatternList": [
+			{
+				"Key": "2fe542ae-e3cf-45de-96dc-2b2d4d5a4b7c",
+				"Name": "7B Partial (1)",
+				"ShortName": "7BP1",
+				"Description": "7B Partial (1)",
+				"LineType": "Solid",
+				"LineColor": "#f58220",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "d60739b5-121a-4920-86f3-c72beaffaa86",
+					"DirectionName": "S",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "d0c5cadf-414b-43ae-82f0-836c151e41c9",
+				"Name": "7B",
+				"ShortName": "7B",
+				"Description": "7B",
+				"LineType": "Solid",
+				"LineColor": "#f58220",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "d60739b5-121a-4920-86f3-c72beaffaa86",
+					"DirectionName": "S",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "7B - BEAR CREEK",
+		"RouteType": null
+	},
+	{
+		"Key": "7ab56932-3fbb-401c-8069-7a0a92ca0ac4",
+		"Name": "RVH/YONGE",
+		"ShortName": "8A",
+		"Description": "RVH/YONGE",
+		"PatternList": [
+			{
+				"Key": "e18d526f-9818-4223-ae43-06cc7bf5f884",
+				"Name": "8A-NB BCS",
+				"ShortName": "8ANBC",
+				"Description": "8A-NB BCS",
+				"LineType": "Solid",
+				"LineColor": "#000000",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "6f094dbf-e6d6-4382-ab68-3bb7e13d8a65",
+					"DirectionName": "N",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "0a44f504-04aa-4af4-8a31-0f361eab5155",
+				"Name": "8A-NB Partial (1)",
+				"ShortName": "8ANP1",
+				"Description": "8A-NB Partial (1)",
+				"LineType": "Solid",
+				"LineColor": "#000000",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "6f094dbf-e6d6-4382-ab68-3bb7e13d8a65",
+					"DirectionName": "N",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "bf7d61bb-22d6-4cdc-a1e9-baf2fd0fed9b",
+				"Name": "8A-NB Partial (2)",
+				"ShortName": "8ANP2",
+				"Description": "8A-NB Partial (2)",
+				"LineType": "Solid",
+				"LineColor": "#000000",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "6f094dbf-e6d6-4382-ab68-3bb7e13d8a65",
+					"DirectionName": "N",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "edab9f59-0056-47ff-9c36-ca152980222e",
+				"Name": "8A-NB Full Northbound",
+				"ShortName": "8ANBF",
+				"Description": "8A-NB Full Northbound",
+				"LineType": "Solid",
+				"LineColor": "#000000",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "6f094dbf-e6d6-4382-ab68-3bb7e13d8a65",
+					"DirectionName": "N",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "b60b0c49-52d6-48f7-a47d-136001afa331",
+				"Name": "8A-SB Full Southbound",
+				"ShortName": "8ASBF",
+				"Description": "8A-SB Full Southbound",
+				"LineType": "Solid",
+				"LineColor": "#000000",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "3355b3ae-5988-4e71-a548-55ecb9087a6d",
+					"DirectionName": "S",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "de1bf17d-2ec4-41a8-8b2e-94894a75b3e5",
+				"Name": "8A-SB Partial (2)",
+				"ShortName": "8ASP2",
+				"Description": "8A-SB Partial (2)",
+				"LineType": "Solid",
+				"LineColor": "#000000",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "3355b3ae-5988-4e71-a548-55ecb9087a6d",
+					"DirectionName": "S",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "3f103864-a928-4034-9823-bbb391d0112f",
+				"Name": "8A-SB Partial (1)",
+				"ShortName": "8ASP1",
+				"Description": "8A-SB Partial (1)",
+				"LineType": "Solid",
+				"LineColor": "#000000",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "3355b3ae-5988-4e71-a548-55ecb9087a6d",
+					"DirectionName": "S",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "8A - RVH/YONGE",
+		"RouteType": null
+	},
+	{
+		"Key": "378a1019-cf47-4145-92f2-5da89d215b92",
+		"Name": "Park Place",
+		"ShortName": "8B",
+		"Description": "Park Place",
+		"PatternList": [
+			{
+				"Key": "5fa3934c-e95f-4d71-9976-1e84cb0382d5",
+				"Name": "8B-SB Partial (1)",
+				"ShortName": "8BSP1",
+				"Description": "8B-SB Partial (1)",
+				"LineType": "Solid",
+				"LineColor": "#000000",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "177b3ff3-8d6a-4972-bccf-5c903e8d4992",
+					"DirectionName": "S",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "06e4bab5-2ca4-4f9d-b1be-96984f4d071b",
+				"Name": "8B-SB Full Southbound With BCS",
+				"ShortName": "8BSBC",
+				"Description": "8B-SB Full Southbound With BCS",
+				"LineType": "Solid",
+				"LineColor": "#000000",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "177b3ff3-8d6a-4972-bccf-5c903e8d4992",
+					"DirectionName": "S",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "a112d18c-b9ab-42b1-84bb-d09f8c0f9ac4",
+				"Name": "8B-SB Partial (2)",
+				"ShortName": "8BSP2",
+				"Description": "8B-SB Partial (2)",
+				"LineType": "Solid",
+				"LineColor": "#000000",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "177b3ff3-8d6a-4972-bccf-5c903e8d4992",
+					"DirectionName": "S",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "340fffe8-e997-4462-8209-ddc65228e67f",
+				"Name": "8B-SB Full Southbound",
+				"ShortName": "8BSBF",
+				"Description": "8B-SB Full Southbound",
+				"LineType": "Solid",
+				"LineColor": "#000000",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "177b3ff3-8d6a-4972-bccf-5c903e8d4992",
+					"DirectionName": "S",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "a1ebd98b-3fc5-436d-b87d-6f8b155214ee",
+				"Name": "8B-NB Full Northbound",
+				"ShortName": "8BNBF",
+				"Description": "8B-NB Full Northbound",
+				"LineType": "Solid",
+				"LineColor": "#000000",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "1f1dd68c-ab7e-4691-b843-c120b7b23a88",
+					"DirectionName": "N",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "7deeb251-32ff-4654-a57b-966406fa82aa",
+				"Name": "8B-NB Partial (1)",
+				"ShortName": "8BNP1",
+				"Description": "8B-NB Partial (1)",
+				"LineType": "Solid",
+				"LineColor": "#000000",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "1f1dd68c-ab7e-4691-b843-c120b7b23a88",
+					"DirectionName": "N",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "6d139113-d642-432b-a8cb-ace7d32080b7",
+				"Name": "8B-NB Partial (2)",
+				"ShortName": "8BNP2",
+				"Description": "8B-NB Partial (2)",
+				"LineType": "Solid",
+				"LineColor": "#000000",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "1f1dd68c-ab7e-4691-b843-c120b7b23a88",
+					"DirectionName": "N",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "faffce37-08ca-41bb-be7c-dd225678555b",
+				"Name": "8B-NB Partial (1)(Copy)",
+				"ShortName": "8BN1C",
+				"Description": "8B-NB Partial (1)(Copy)",
+				"LineType": "Solid",
+				"LineColor": "#000000",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "1f1dd68c-ab7e-4691-b843-c120b7b23a88",
+					"DirectionName": "N",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "005a872f-e898-4e52-b5b8-eb80b4fd20fe",
+				"Name": "8B-NB BarrieSouth GO",
+				"ShortName": "8BNBG",
+				"Description": "8B-NB BarrieSouth GO",
+				"LineType": "Solid",
+				"LineColor": "#000000",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "1f1dd68c-ab7e-4691-b843-c120b7b23a88",
+					"DirectionName": "N",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			},
+			{
+				"Key": "9bb2a3af-759a-443e-9597-ee12c47e8b5c",
+				"Name": "8B Peartree Special",
+				"ShortName": "8B PT",
+				"Description": "8B Peartree Special",
+				"LineType": "Solid",
+				"LineColor": "#FF1848",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": false,
+				"Direction": {
+					"DirectionKey": "1f1dd68c-ab7e-4691-b843-c120b7b23a88",
+					"DirectionName": "N",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "8B - Park Place",
+		"RouteType": null
+	},
+	{
+		"Key": "5cc22420-2619-4ecd-a7d7-7241ad4f0311",
+		"Name": "ANGUS BORDEN",
+		"ShortName": "90A",
+		"Description": "ANGUS BORDEN",
+		"PatternList": [
+			{
+				"Key": "04c80b59-2583-49a2-a1b2-c57686a11c6a",
+				"Name": "90A",
+				"ShortName": "90A",
+				"Description": "90A",
+				"LineType": "Solid",
+				"LineColor": "#007236",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "4c385b0f-8d33-46dc-bf83-2e4d60f28c87",
+					"DirectionName": "CW",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "90A - ANGUS BORDEN",
+		"RouteType": null
+	},
+	{
+		"Key": "7b2436e1-a50d-4112-9349-36f106881265",
+		"Name": "Peacekeepers Way",
+		"ShortName": "90B",
+		"Description": "Peacekeepers Way",
+		"PatternList": [
+			{
+				"Key": "031a291f-7da9-4697-a90a-64297e2dd16e",
+				"Name": "90B",
+				"ShortName": "90B",
+				"Description": "90B",
+				"LineType": "Solid",
+				"LineColor": "#007236",
+				"IsDisplayable": true,
+				"IsPrimaryPattern": true,
+				"Direction": {
+					"DirectionKey": "782a801f-d26b-4a52-8e59-136642348677",
+					"DirectionName": "CCW",
+					"RouteKey": null,
+					"ScheduleKey": null,
+					"DirectionExternalId": null
+				},
+				"PatternPointList": null
+			}
+		],
+		"CombinedName": "90B - Peacekeepers Way",
+		"RouteType": null
+	}
+]

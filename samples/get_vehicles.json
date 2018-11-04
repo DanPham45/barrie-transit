@@ -1,0 +1,92 @@
+[
+    {
+        "RouteKey": "295b1385-e882-4abc-8974-4cb6ac661386",
+        "DirectionKey": "6205e0c6-ad08-4b8e-88b2-ff60b741e9a5",
+        "VehiclesByPattern": [
+            {
+                "PatternKey": "7faa1cb9-27b9-406a-bddd-337729fdd375",
+                "Pattern": {
+                    "Key": "7faa1cb9-27b9-406a-bddd-337729fdd375",
+                    "Name": "1A",
+                    "ShortName": "1A",
+                    "Description": "",
+                    "LineType": "Solid",
+                    "LineColor": "ffec008c",
+                    "IsDisplayable": true,
+                    "IsPrimaryPattern": true,
+                    "Direction": {
+                        "DirectionKey": "6205e0c6-ad08-4b8e-88b2-ff60b741e9a5",
+                        "DirectionName": "N",
+                        "RouteKey": null,
+                        "ScheduleKey": null,
+                        "DirectionExternalId": null
+                    },
+                    "PatternPointList": null
+                },
+                "Vehicles": [
+                    {
+                        "Key": "0f03b025-51ee-4532-ae68-38bd0658a420",
+                        "Name": "67404",
+                        "PercentFilled": 10,
+                        "GPS": {
+                            "Date": "2018-11-04T12:35:38-05:00",
+                            "Lat": 44.370017000000004,
+                            "Long": -79.693472,
+                            "Spd": 4.4900814,
+                            "Dir": 21.559999465942383
+                        },
+                        "Pattern": {
+                            "Key": "7faa1cb9-27b9-406a-bddd-337729fdd375",
+                            "Name": "1A",
+                            "ShortName": "1A",
+                            "Description": "",
+                            "LineType": "Solid",
+                            "LineColor": "ffec008c",
+                            "IsDisplayable": true,
+                            "IsPrimaryPattern": true,
+                            "Direction": {
+                                "DirectionKey": "6205e0c6-ad08-4b8e-88b2-ff60b741e9a5",
+                                "DirectionName": "N",
+                                "RouteKey": null,
+                                "ScheduleKey": null,
+                                "DirectionExternalId": null
+                            },
+                            "PatternPointList": null
+                        },
+                        "Route": {
+                            "Key": "295b1385-e882-4abc-8974-4cb6ac661386",
+                            "Name": "GEORGIAN MALL",
+                            "ShortName": "1A",
+                            "Description": "",
+                            "PatternList": null,
+                            "CombinedName": "1A - GEORGIAN MALL",
+                            "RouteType": null
+                        },
+                        "Direction": null,
+                        "TripData": null,
+                        "NextStop": {
+                            "Key": "d9bb63b7-3bc4-4b8f-8c1d-b92a2916342d",
+                            "Name": "Burton Avenue",
+                            "Rank": 0,
+                            "HeaderRank": null,
+                            "Latitude": 0.0,
+                            "Longitude": 0.0,
+                            "ArrivalAtStop": "0001-01-01T00:00:00",
+                            "TimeToStop": 0,
+                            "IsTimePoint": false,
+                            "StopCode": "817",
+                            "EstimatedDepartTime": "0001-01-01T00:00:00",
+                            "ScheduledWorkDate": "0001-01-01T00:00:00",
+                            "ScheduleKey": null
+                        },
+                        "RequestedStop": null,
+                        "IsLastVehicle": false,
+                        "PassengerCapacity": 55,
+                        "PassengersOnboard": 6,
+                        "Work": null
+                    }
+                ]
+            }
+        ]
+    }
+]

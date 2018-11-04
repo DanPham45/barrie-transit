@@ -1,0 +1,15 @@
+{
+    "StopCode": "67",
+    "RouteDirectionTimes": [
+        {
+            "RouteKey": "295b1385-e882-4abc-8974-4cb6ac661386",
+            "DirectionKey": "6205e0c6-ad08-4b8e-88b2-ff60b741e9a5",
+            "NextDeparts": [
+                {
+                    "EstimatedDepartTime": 1541353800000.0,
+                    "ScheduledDepartTime": 1541353800000.0
+                }
+            ]
+        }
+    ]
+}

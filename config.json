@@ -1,0 +1,7 @@
+{
+    "db": {
+        "user": "someuser",
+        "database": "somename",
+        "url": "or use url"
+    }
+}
