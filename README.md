@@ -6,7 +6,14 @@ flask code that relates to our own APIs
 
 ## app
 
-base flask app
+base flask app, *py + front files
+
+- /static: css/js
+- /templates: html
+
+## db
+
+any DB related code there
 
 ## external
 
@@ -17,10 +24,6 @@ to fill up our database
 
 JSONs as examples of
 data from barrie bus API
-
-## static
-
-html/css/js
 
 ## tests
 

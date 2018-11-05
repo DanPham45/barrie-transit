@@ -3,3 +3,8 @@
 # read configs, etc.
 # Any function should be placed in the other files
 # and here just import
+
+from app.server import run
+
+# this function will have some params later
+run()
