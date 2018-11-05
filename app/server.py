@@ -8,6 +8,7 @@ from flask import (
 )
 from api.api_v1 import app as api_v1 
 
+__version__ = 'v1.0'
 template_dir = abspath(join('..', 'templates'))
 static_dir = abspath(join('..', 'static'))
 

@@ -13,6 +13,7 @@ from flask import (
     jsonify,
 )
 
+__version__ = 'v1.0'
 app = Blueprint('api', __name__)
 
 @app.route('/<route>')
