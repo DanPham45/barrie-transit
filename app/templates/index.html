@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../static/css/demo.css">
   <link rel="stylesheet" href="../static/css/style.css">
 
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript" src="{{ url_for('static', filename='js/bus_barrie_main.js') }}"></script>
 
 </head>
@@ -176,7 +177,7 @@
                   <h4>Statistics</h4>
                 </div>
                 <div class="card-body">
-                  <canvas id="myChart" height="158"></canvas>
+                  <div id='chart_div'></div>
                   <div class="statistic-details mt-sm-4">
                     <div class="statistic-details-item">
                       <small class="text-muted"><span class="text-primary"><i class="ion-arrow-up-b"></i></span> 7%</small>
