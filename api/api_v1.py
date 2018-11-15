@@ -16,6 +16,11 @@ from flask import (
 __version__ = 'v1.0'
 app = Blueprint('api', __name__)
 
+@app.route('/get_routes')
+def get_rotes():
+    data = {'routes': [{'name': '100D', 'key': '123'}]}
+    return jsonify(data)
+
 @app.route('/<route>')
 def get_vehicles(route):
     data = {}

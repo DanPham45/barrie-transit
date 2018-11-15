@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="../static/css/demo.css">
   <link rel="stylesheet" href="../static/css/style.css">
 
-
+  <script type="text/javascript" src="{{ url_for('static', filename='js/bus_barrie_main.js') }}"></script>
   <!----<script type="text/css" src="{{ url_for('static', filename='modules/bootstrap/css/bootstrap.min.css') }}"></script>
   <script type="text/css" src="{{ url_for('static', filename='modules/ionicons/css/ionicons.min.css') }}"></script>
 
@@ -118,7 +118,7 @@
               <a href="#" class="has-dropdown"><i class="ion ion-ios-albums-outline"></i><span>Components</span></a>
               <ul class="menu-dropdown">
                 <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Show Routes Statistics</a></li>
-                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Show Analysis</a></li>
+                <li><a href="#" onclick="getRoutes();"><i class="ion ion-ios-circle-outline"></i> TEST ROUTES</a></li>
               </ul>
             </li>
             <li>
