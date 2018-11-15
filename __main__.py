@@ -3,8 +3,21 @@
 # read configs, etc.
 # Any function should be placed in the other files
 # and here just import
+import json
 
 from app.server import run
+from db.db import DB
 
-# this function will have some params later
+def check_config(data):
+    # need to print some error
+    # if it's not enough attrs in the config
+    pass
+
+def get_config(filename):
+    with open(filename, 'r') as f:
+        return json.load(f)
+
+config = get_config('config.json')
+db = DB(url=config['db']['url'])
+
 run()
