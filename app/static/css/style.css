@@ -710,6 +710,7 @@ body.sidebar-gone .main-content {
 .card .card-header,
 .card .card-footer,
 .card .card-body {
+	width: 100%;
 	background-color: transparent;
 }
 .card .card-body {
