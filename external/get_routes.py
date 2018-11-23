@@ -1,5 +1,8 @@
-import requests, json
-#Step 1: Create data
+import requests
+import json
+
+from connect_db import get_db
+from constants import GET_ROUTES_ENDPOINT
 
 mapping = {
     'Key':'RouteKey',
@@ -42,9 +45,12 @@ def filter_routes(r):
     return route_filtered   
 
 def get_all_routes():
-    #GetRoutes
-    route_r = requests.post('http://www.myridebarrie.ca/RouteMap/GetRoutes/')
+    # GetRoutes
+    route_r = requests.post(GET_ROUTES_ENDPOINT)
     route_data = route_r.json()
     return filter_routes(route_data)
 
-routes = db.routes.insert_many(get_all_routes())
+
+if __name__ == "__main__":
+    db = get_db()
+    db.routes.insert_many(get_all_routes())

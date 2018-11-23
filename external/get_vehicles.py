@@ -1,5 +1,11 @@
-import requests, json
-#Step 1: Create data
+import requests
+import json
+
+from connect_db import get_db
+from constants import (
+    GET_ROUTES_ENDPOINT,
+    GET_VEHICLES_ENDPOINT,
+)
 
 mapping = {
     'RouteKey':'RouteKey',
@@ -72,23 +78,28 @@ def filter_vehicles(r):
     return veh_filtered 
 
 def get_all_vehicles():
-    #GetRoutes
-    route_r = requests.post('http://www.myridebarrie.ca/RouteMap/GetRoutes/')
+    # GetRoutes
+    route_r = requests.post(GET_ROUTES_ENDPOINT)
     route_data = route_r.json()
-    #GetVehicles
+
+    # GetVehicles
     vehicle_array = []
     for i in range(0, len(route_data)):
         direction_value = route_data[i]['PatternList'][0]['Direction']['DirectionKey']
         route_value = route_data[i]['Key']
-        vehicle_params = "routeDirectionKeys[0][RouteKey]={0}&routeDirectionKeys[0][DirectionKey]={1}".format(route_value,direction_value)
+        vehicle_params = 'routeDirectionKeys[0][RouteKey]={0}&routeDirectionKeys[0][DirectionKey]={1}'.format(route_value,direction_value)
         headers = {
-        'Content-Type': "application/x-www-form-urlencoded",
+            'Content-Type': "application/x-www-form-urlencoded",
         }
-        vehicle_r = requests.post('http://www.myridebarrie.ca/RouteMap/GetVehicles/', data = vehicle_params, headers = headers)
+        vehicle_r = requests.post(GET_VEHICLES_ENDPOINT, data=vehicle_params, headers=headers)
         vehicle_data = vehicle_r.json()
         vehicle_draft = json.dumps(vehicle_data)
         vehicle = json.loads(vehicle_draft)
         vehicle_array = vehicle_array + vehicle
+
     return filter_vehicles(vehicle_array)
 
-vehicles = db.vehicles.insert_many(get_all_vehicles())    
+
+if __name__ == "__main__":
+    db = get_db()
+    db.vehicles.insert_many(get_all_vehicles())    
