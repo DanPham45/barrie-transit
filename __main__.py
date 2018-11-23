@@ -9,7 +9,6 @@ from app.server import run
 from db.db import DB
 
 
-
 def check_config(data):
     # need to print some error
     # if it's not enough attrs in the config

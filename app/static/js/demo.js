@@ -31,4 +31,3 @@ $(".demo-toggle-skin").each(function(i) {
 	 	skin(_this.attributes.title.nodeValue.toLowerCase().replace(/ /g, ''));
 	});
  });
-

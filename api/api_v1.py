@@ -36,8 +36,13 @@ def get_vehicles(route):
 
 @app.route('/get_all_routes')
 def get_route_names():
-	# {"routes": ["100A", "8A"]}
-
+    """
+        Returns something like this
+        {"routes": ["100A", "8A"]}
+    """
     # TODO: use config
     db = DB('localhost:27017')
-    return jsonify(db.get_all_routes_name())
+
+    cursor = db.get_all_routes_name()
+    routes = [route for route in cursor]
+    return jsonify({'routes': routes})

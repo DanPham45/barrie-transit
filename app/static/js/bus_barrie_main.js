@@ -48,3 +48,36 @@ function getRoutes() {
         console.log('Fetch Error :-S', err);
     });
 }
+
+
+function fetchInitialBars() {
+    fetch('./api_v1/get_all_routes')
+    .then(
+        function(response) {
+            if (response.status !== 200) {
+                console.log(
+                    'Looks like there was a problem. Status Code: ' + response.status);
+                return;
+            }
+
+            response.json().then(function(data) {
+                var busbag = document.getElementById("busbag");
+                console.log(data);
+                busbag.innerHTML = 
+                `<div class="card-header">
+                    <h4>Routes that we track</h4>
+                </div>
+                <div class="card-body">`
+                    + data.routes + 
+                `</div>`;
+            });
+        }
+    )
+    .catch(function(err) {
+        console.log('Fetch Error :-S', err);
+    });
+}
+
+window.onload = function() {
+    fetchInitialBars();
+}
