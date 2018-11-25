@@ -46,6 +46,8 @@ vehicle_mapping = {
 }
 
 def get_veh_data(dct, layers):
+    if dct is None:
+        return {}
     if isinstance(layers, str):
         return dct[layers]
     if layers:
