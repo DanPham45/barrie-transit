@@ -26,57 +26,6 @@ function createPlot(data) {
     }
 }
 
-function getRoutes() {
-    fetch('./api_v1/get_routes')
-    .then(
-        function(response) {
-            if (response.status !== 200) {
-                console.log(
-                    'Looks like there was a problem. Status Code: ' + response.status);
-                return;
-            }
-
-            response.json().then(function(data) {
-                console.log(data);
-                // but it's the simplset way
-                // need to figure how to change existing plot every time
-                createPlot(data);
-            });
-        }
-    )
-    .catch(function(err) {
-        console.log('Fetch Error :-S', err);
-    });
-}
-
-
-function fetchInitialBars() {
-    fetch('./api_v1/get_all_routes')
-    .then(
-        function(response) {
-            if (response.status !== 200) {
-                console.log(
-                    'Looks like there was a problem. Status Code: ' + response.status);
-                return;
-            }
-
-            response.json().then(function(data) {
-                var busbag = document.getElementById("busbag");
-                busbag.innerHTML = 
-                `<div class="card-header">
-                    <h4>Routes that we track</h4>
-                </div>
-                <div class="card-body">`
-                    + data.routes + 
-                `</div>`;
-            });
-        }
-    )
-    .catch(function(err) {
-        console.log('Fetch Error :-S', err);
-    });
-}
-
 function mapVisuals() {
     var mymap = L.map('mapid').setView([79.6903, 44.3894], 8);
 
@@ -107,10 +56,14 @@ function processAPI(path, func) {
 }
 
 window.onload = function() {
-    getRoutes();
-    fetchInitialBars();
     mapVisuals();
 
+    processAPI(
+        'get_routes',
+        function(data) {
+            createPlot(data);
+        }
+    );
     processAPI(
         'get_routes_num',
         function(data) {

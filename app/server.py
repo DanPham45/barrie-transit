@@ -1,3 +1,4 @@
+import os
 from os.path import (
     abspath,
     join,
@@ -23,4 +24,10 @@ def index():
 def run():
     # debug=True/False shoud be taken from config.json
     # and definitely turn off for final release!
-    app.run(debug=True,host='0.0.0.0', port=5000)
+    host = os.environ.get('bus_host')
+    port = os.environ.get('bus_port')
+    debug = os.environ.get('bus_debug', False)
+    if host and port:
+        app.run(debug=debug, host=host, port=port)
+    else:
+        app.run(debug=debug)
