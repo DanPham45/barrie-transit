@@ -4,19 +4,19 @@ function createPlot(data) {
 
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
-            ['Age', 'Weight'],
-            [ 8,      12],
-            [ 4,      5.5],
-            [ 11,     14],
-            [ 4,      5],
-            [ 3,      3.5],
-            [ 6.5,    7]
+            ['Route', 'Delay'],
+            [ '8A',      12],
+            [ '8B',      5.5],
+            [ '100C',     14],
+            [ '100D',      5],
+            [ '3A',      3.5],
+            [ '3B',    7]
         ]);
 
         var options = {
-            title: 'Age vs. Weight comparison',
-            hAxis: {title: 'Age', minValue: 0, maxValue: 15},
-            vAxis: {title: 'Weight', minValue: 0, maxValue: 15},
+            title: 'Average delay per route',
+            hAxis: {title: 'Route', minValue: 0, maxValue: 15},
+            vAxis: {title: 'Delay', minValue: 0, maxValue: 15},
             legend: 'none'
         };
 
@@ -78,6 +78,19 @@ function fetchInitialBars() {
     });
 }
 
+function mapVisuals() {
+    var mymap = L.map('mapid').setView([79.6903, 44.3894], 8);
+
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox.streets',
+        accessToken: 'pk.eyJ1IjoiaGFza3BwcCIsImEiOiJjanAzOHFscDQwNWRvM2twZXlxMTNocmRpIn0.-fR_k4Aw9WSYPqlX6NHfHA'
+    }).addTo(mymap);
+}
+
 window.onload = function() {
+    getRoutes();
     fetchInitialBars();
+    mapVisuals();
 }

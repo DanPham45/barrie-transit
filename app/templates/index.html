@@ -5,12 +5,19 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" name="viewport">
   <title>Dashboard &mdash; Stisla</title>
 
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+    integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+    crossorigin=""></script>
   
   <link rel="stylesheet" href="../static/modules/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="../static/modules/ionicons/css/ionicons.min.css') }}">
   <link rel="stylesheet" href="../static/modules/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
   <link rel="stylesheet" href="../static/modules/summernote/summernote-lite.css">
   <link rel="stylesheet" href="../static/modules/flag-icon-css/css/flag-icon.min.css">
+  <link rel="stylesheet" href="../static/css/custom.css">
   <link rel="stylesheet" href="../static/css/demo.css">
   <link rel="stylesheet" href="../static/css/style.css">
 
@@ -23,19 +30,6 @@
   <div id="app">
     <div class="main-wrapper">
       <div class="navbar-bg"></div>
-      <nav class="navbar navbar-expand-lg main-navbar">
-        <form class="form-inline mr-auto">
-          <ul class="navbar-nav mr-3">
-            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="ion ion-navicon-round"></i></a></li>
-            <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="ion ion-search"></i></a></li>
-          </ul>
-          <div class="search-element">
-            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn" type="submit"><i class="ion ion-search"></i></button>
-          </div>
-        </form>
-
-      </nav>
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
@@ -51,46 +45,25 @@
             <li>
               <a href="#" class="has-dropdown"><i class="ion ion-ios-albums-outline"></i><span>Components</span></a>
               <ul class="menu-dropdown">
-                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Show Routes Statistics</a></li>
-                <li><a href="#" onclick="getRoutes();"><i class="ion ion-ios-circle-outline"></i> TEST ROUTES</a></li>
+                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Common routes statistics</a></li>
+                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Same routes, different time</a></li>
+                <li><a href="#" onclick=""><i class="ion ion-ios-circle-outline"></i> Most delayed routes </a></li>
               </ul>
             </li>
             <li>
-              <a href="#"><i class="ion ion-clipboard"></i><span>
+              <a href="https://www.barrie.ca/Living/Getting%20Around/BarrieTransit/Pages/SchedulesMaps.aspx"><i class="ion ion-clipboard"></i><span>
                 See original schedule
               </span></a>
-            </li>
-
-            <li class="menu-header">More</li>
-            <li>
-              <a href="#" class="has-dropdown"><i class="ion ion-ios-nutrition"></i> Click Me</a>
-              <ul class="menu-dropdown">
-                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Menu 1</a></li>
-                <li><a href="#" class="has-dropdown"><i class="ion ion-ios-circle-outline"></i> Menu 2</a>
-                  <ul class="menu-dropdown">
-                    <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 1</a></li>
-                    <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 2</a></li>
-                    <li><a href="#" class="has-dropdown"><i class="ion ion-ios-circle-outline"></i> Child Menu 3</a>
-                      <ul class="menu-dropdown">
-                        <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 1</a></li>
-                        <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 2</a></li>
-                        <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 3</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Child Menu 4</a></li>
-                  </ul>
-                </li>
-              </ul>
             </li>
             <li>
               <a href="#"><i class="ion ion-heart"></i> New Schedule Changes <div class="badge badge-primary">10</div></a>
             </li>
             <li>
-              <a href=""><i class="ion ion-ios-information-outline"></i> Credits</a>
+              <a href=""><i class="ion ion-ios-information-outline"></i> Credits </a>
             </li>
           </ul>
           <div class="p-3 mt-4 mb-4">
-            <a href="" class="btn btn-danger btn-shadow btn-round has-icon has-icon-nofloat btn-block">
+            <a href="http://www.myridebarrie.ca/" class="btn btn-danger btn-shadow btn-round has-icon has-icon-nofloat btn-block">
               <i class="ion ion-help-buoy"></i> <div>Go to myridebarrie</div>
             </a>
           </div>
@@ -107,8 +80,13 @@
                 <div class="card-icon bg-primary">
                   <i class="ion ion-person"></i>
                 </div>
-                <div id="busbag" class="card-wrap">
-                  
+                <div class="card-wrap">
+                  <div class="card-header">
+                    <h4>Location records</h4>
+                  </div>
+                  <div class="card-body">
+                    1045556
+                  </div>
                 </div>
               </div>
             </div>
@@ -119,7 +97,7 @@
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
-                    <h4>News</h4>
+                    <h4>Months of tracking</h4>
                   </div>
                   <div class="card-body">
                     42
@@ -134,10 +112,10 @@
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
-                    <h4>Reports</h4>
+                    <h4>Buses in Barrie</h4>
                   </div>
                   <div class="card-body">
-                    1,201
+                    100500
                   </div>
                 </div>
               </div>
@@ -149,17 +127,17 @@
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
-                    <h4>Online Users</h4>
+                    <h4>Routes in Barrie</h4>
                   </div>
                   <div class="card-body">
-                    47
+                    123
                   </div>
                 </div>
               </div>
             </div>                  
           </div>
           <div class="row">
-            <div class="col-lg-8 col-md-12 col-12 col-sm-12">
+            <div class="col-lg-12 col-md-16 col-16 col-sm-16">
               <div class="card">
                 <div class="card-header">
                   <div class="float-right">
@@ -172,59 +150,69 @@
                   <h4>Statistics</h4>
                 </div>
                 <div class="card-body">
-                  <div id='chart_div'></div>
+                  <div id="chart_div"></div>
                   <div class="statistic-details mt-sm-4">
                     <div class="statistic-details-item">
-                      <small class="text-muted"><span class="text-primary"><i class="ion-arrow-up-b"></i></span> 7%</small>
-                      <div class="detail-value">$243</div>
-                      <div class="detail-name">Today's Sales</div>
+                      <small class="text-muted">
+                        <span class="text-primary">
+                          <i class="ion-arrow-up-b"></i>
+                        </span> 7% more than average for last week
+                      </small>
+                      <div class="detail-value">4.5 minutes</div>
+                      <div class="detail-name">Average delay today</div>
                     </div>
                     <div class="statistic-details-item">
-                      <small class="text-muted"><span class="text-danger"><i class="ion-arrow-down-b"></i></span> 23%</small>
-                      <div class="detail-value">$2,902</div>
-                      <div class="detail-name">This Week's Sales</div>
+                      <small class="text-muted">
+                        <span class="text-danger">
+                          <i class="ion-arrow-down-b">
+                          </i></span> 23% less than last month
+                        </small>
+                      <div class="detail-value">9.7 minutes</div>
+                      <div class="detail-name">Max delay today</div>
                     </div>
                     <div class="statistic-details-item">
-                      <small class="text-muted"><span class="text-primary"><i class="ion-arrow-up-b"></i></span>9%</small>
-                      <div class="detail-value">$12,821</div>
-                      <div class="detail-name">This Month's Sales</div>
+                      <small class="text-muted">
+                        <span class="text-danger">
+                          <i class="ion-arrow-down-b">
+                          </i>
+                        </span> 42% less than yesterday
+                      </small>
+                      <div class="detail-value">0.1 minutes</div>
+                      <div class="detail-name">Min delay today</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header">
+                  <div class="float-right">
+                    <div class="btn-group">
+                      <a href="#" class="btn active">Week</a>
+                      <a href="#" class="btn">Month</a>
+                      <a href="#" class="btn">Year</a>
+                    </div>
+                  </div>
+                  <h4>Map Visuals</h4>
+                </div>
+                <div class="card-body">
+                  <div id="mapid"></div>
+                  <div class="statistic-details mt-sm-4">
+                    <div class="statistic-details-item">
+                      <small class="text-muted"><span class="text-primary">
+                        <i class="ion-arrow-up-b"></i></span>Actually, as usual</small>
+                      <div class="detail-value">"Bus Barrie Terminal"</div>
+                      <div class="detail-name">Spent most time at</div>
                     </div>
                     <div class="statistic-details-item">
-                      <small class="text-muted"><span class="text-primary"><i class="ion-arrow-up-b"></i></span> 19%</small>
-                      <div class="detail-value">$92,142</div>
-                      <div class="detail-name">This Year's Sales</div>
+                      <small class="text-muted"><span class="text-danger">
+                        <i class="ion-arrow-down-b"></i></span> 23% more than will be tomorrow</small>
+                      <div class="detail-value">23 minutes</div>
+                      <div class="detail-name">Longest ride between two stops</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>        
-          </div>
-          <div class="row">
-            <div class="col-lg-5 col-md-12 col-12 col-sm-12">
-              <form method="post" class="needs-validation" novalidate="">
-                <div class="card">
-                  <div class="card-header">
-                    <h4>Quick Draft</h4>
-                  </div>
-                  <div class="card-body">
-                    <div class="form-group">
-                      <label>Title</label>
-                      <input type="text" name="title" class="form-control" required>
-                      <div class="invalid-feedback">
-                        Please fill in the title
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label>Content</label>
-                      <textarea class="summernote-simple"></textarea>
-                    </div>
-                  </div>
-                  <div class="card-footer">
-                    <button class="btn btn-primary">Save Draft</button>
-                  </div>
-                </div>
-              </form>
-            </div>
           </div>
         </section>
       </div>
