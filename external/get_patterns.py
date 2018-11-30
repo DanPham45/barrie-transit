@@ -79,9 +79,9 @@ def get_all_patterns():
         filter_pattern_list += filter_patterns(pattern_array)
     return filter_pattern_list
         
-data = get_all_patterns()
 
 if __name__ == "__main__":
+    data = get_all_patterns()
     db = get_db()
     db.patterns.insert_many(data)    
 
