@@ -62,7 +62,6 @@ function fetchInitialBars() {
 
             response.json().then(function(data) {
                 var busbag = document.getElementById("busbag");
-                console.log(data);
                 busbag.innerHTML = 
                 `<div class="card-header">
                     <h4>Routes that we track</h4>
@@ -89,8 +88,66 @@ function mapVisuals() {
     }).addTo(mymap);
 }
 
+function processAPI(path, func) {
+    fetch(`./api_v1/${path}`)
+    .then(
+        function(response) {
+            if (response.status !== 200) {
+                console.log(
+                    'Some problem with ${path}, ${response.status}'
+                );
+                return;
+            }
+            response.json().then(func);
+        }
+    )
+    .catch(function(err) {
+        console.log('Fetch Error :-S', err);
+    });
+}
+
 window.onload = function() {
     getRoutes();
     fetchInitialBars();
     mapVisuals();
+
+    processAPI(
+        'get_routes_num',
+        function(data) {
+            let routesbag = document.getElementById("routesnumbar");
+            routesbag.innerHTML = `
+            <div class="card-header">
+                <h4>Routes in Barrie</h4>
+            </div>
+            <div class="card-body">
+                ${data.NumOfRoute}
+            </div>`;
+        }
+    );
+    processAPI(
+        'get_bus_num',
+        function(data) {
+            let busbag = document.getElementById("busnumbar");
+            busbag.innerHTML = `
+            <div class="card-header">
+                <h4>Buses in Barrie</h4>
+            </div>
+            <div class="card-body">
+                ${data.NumOfVehicle}
+            </div>`;
+        }
+    );
+    processAPI(
+        'get_track_days',
+        function(data) {
+            let daystackbag = document.getElementById("daystrackbar");
+            daystackbag.innerHTML = `
+            <div class="card-header">
+                <h4>Days of tracking</h4>
+            </div>
+            <div class="card-body">
+                ${data.days}
+            </div>`;
+        }
+    );
 }

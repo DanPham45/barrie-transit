@@ -43,3 +43,30 @@ class DB:
             {'PatternName':1,'GpsDate':1,'GpsLong':1, 'GpsLat':1, '_id':0}
         )
         return [loc for loc in locations]
+
+    def get_number_of_routes(self):
+        number = self.db.routes.aggregate([
+            {'$group': {'_id': {'Key':"$RouteShortName"}}},
+            {'$count': "NumOfRoute"}
+        ])
+        return number.next()
+
+    def get_number_of_buses(self):
+        number = self.db.vehicles.aggregate([
+            {'$group': {'_id': {'Key':"$VehicleKey"}}},
+            {'$count': "NumOfVehicle"}
+        ])
+        return number.next()
+
+    def get_days_of_tracking(self):
+        dates = self.db.vehicles.aggregate([
+        {
+            '$group':
+                {
+                '_id': 'null',
+                'maxDate': { '$max': "$GpsDate" },
+                'minDate': { '$min': "$GpsDate" }
+                }
+        }])
+        date_range = dates.next()
+        return (date_range['maxDate'] - date_range['minDate']).days

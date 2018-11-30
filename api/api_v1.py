@@ -46,3 +46,24 @@ def get_route_names():
     cursor = db.get_all_routes_name()
     routes = [route for route in cursor]
     return jsonify({'routes': routes})
+
+@app.route('/get_bus_num')
+def get_bus_num():
+    # Returs {'NumOfVehicle': 21}
+    db = DB('localhost:27017')
+    number = db.get_number_of_buses()
+    return jsonify(number)
+
+@app.route('/get_routes_num')
+def get_routes_num():
+    # Returs {'NumOfRoute': 24}
+    db = DB('localhost:27017')
+    number = db.get_number_of_routes()
+    return jsonify(number)
+
+@app.route('/get_track_days')
+def get_track_days():
+    # Returs just number (days)
+    db = DB('localhost:27017')
+    number = db.get_days_of_tracking()
+    return jsonify({'days': number})
