@@ -23,4 +23,4 @@ def index():
 def run():
     # debug=True/False shoud be taken from config.json
     # and definitely turn off for final release!
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0', port=5000)
