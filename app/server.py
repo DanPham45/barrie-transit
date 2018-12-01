@@ -28,6 +28,6 @@ def run():
     port = os.environ.get('bus_port')
     debug = os.environ.get('bus_debug', False)
     if host and port:
-        app.run(debug=debug, host=host, port=port)
+        app.run(debug=debug, host=host, port=int(port))
     else:
         app.run(debug=debug)
