@@ -3,67 +3,89 @@ This module contains out base APIs
 that should be used on Front-End side.
 
 Here we put only simple functions that
-use DB/any_other related functions from different modules.
-
-Moreover, we'll use https://flask-apispec.readthedocs.io/en/latest/usage.html
-to make out APIs much more professional 
+use DB/any_other related functions
+from different modules.
 """
 from flask import (
     Blueprint,
     jsonify,
 )
 
-from db.db import DB
+from app.utils import get_db
 
 __version__ = 'v1.0'
 app = Blueprint('api', __name__)
 
-@app.route('/get_routes')
-def get_routes():
-    data = {'routes': [{'name': '100D', 'key': '123'}]}
-    # data = get_routes_from_db()
-    return jsonify(data)
-
-@app.route('/<route>')
-def get_vehicles(route):
-    data = {}
-    # here we need to get our data from
-    # DB, format it in proper way
-    # and provide to future use on Front-End
-    #1 routes: front end come to get data
-    #2 GET: url, limited data # post: more data
-    return jsonify(data)
-
 @app.route('/get_all_routes')
 def get_route_names():
     """
-        Returns something like this
-        {"routes": ["100A", "8A"]}
+    Returns all possible route names
+    for routes that have tracked.
+    
+    Get something like this
+    {"routes": ["100A", "8A"]}
     """
-    # TODO: use config
-    db = DB('localhost:27017')
-
+    db = get_db()
     cursor = db.get_all_routes_name()
     routes = [route for route in cursor]
     return jsonify({'routes': routes})
 
 @app.route('/get_bus_num')
 def get_bus_num():
-    # Returs {'NumOfVehicle': 21}
-    db = DB('localhost:27017')
-    number = db.get_number_of_buses()
-    return jsonify(number)
+    """
+    Returns number of buses that have tracked.
+    
+    Get {'NumOfVehicle': 21}
+    from DB but returns
+    {'num_of_routes': <NUMBER>}
+    to follow same name convention
+    """
+    db = get_db()
+    result = db.get_number_of_buses()
+    return jsonify({
+        'num_of_vehicles': result.get('NumOfVehicle'),
+    })
 
 @app.route('/get_routes_num')
 def get_routes_num():
-    # Returs {'NumOfRoute': 24}
-    db = DB('localhost:27017')
+    """
+    Returns number of routes that have tracked.
+
+    Get {'NumOfRoute': <NUMBER>}
+    from DB but returns
+    {'num_of_routes': <NUMBER>}
+    to follow same name convention
+    """
+    db = get_db()
     number = db.get_number_of_routes()
-    return jsonify(number)
+    return jsonify({'num_of_routes': number.get('NumOfRoute')})
 
 @app.route('/get_track_days')
 def get_track_days():
-    # Returs just number (days)
-    db = DB('localhost:27017')
-    number = db.get_days_of_tracking()
-    return jsonify({'days': number})
+    """
+    Returns number difference
+    betwwen first and last record date
+    in DB.
+
+    Returs {'days': <NUMBER>}
+    """
+    db = get_db()
+    return jsonify({'days': db.get_days_of_tracking()})
+
+@app.route('/get_avg_pass')
+def get_avg_pass():
+    """
+    Returns average number of passenagers per route.
+
+    Returns {
+        'results': [
+            [
+                <ROUTE_NAME>,
+                <NUMBER>
+            ],
+            ...
+        ]
+    }
+    """
+    db = get_db()
+    return jsonify({'results': db.get_avg_per_route()})

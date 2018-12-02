@@ -10,8 +10,11 @@ class DB:
 
     def __init__(self, url):
         self.url = url
-        client = MongoClient(url)
-        self.db = client.barrieTransit
+        self.client = MongoClient(url)
+        self.db = self.client.barrieTransit
+
+    def close(self):
+        self.client.close()
 
     def insert_route(self, route):
         ref = None
@@ -70,3 +73,13 @@ class DB:
         }])
         date_range = dates.next()
         return (date_range['maxDate'] - date_range['minDate']).days
+
+    def get_avg_per_route(self):
+        results = self.db.vehicles.aggregate([
+            {'$match': {'RouteShortName': {'$exists': True, '$ne': 'null'}}},
+            {'$group': {'_id': "$RouteShortName", 'avgPassengers': {'$avg': '$PassengersOnboard'}}}
+        ])
+        return [
+            [item['_id'], item['avgPassengers']]
+            for item in results
+        ]

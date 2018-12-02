@@ -1,27 +1,10 @@
-function createPlot(data) {
+function createScatterPlot(inputData, options, place) {
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Route', 'Delay'],
-            [ '8A',      12],
-            [ '8B',      5.5],
-            [ '100C',     14],
-            [ '100D',      5],
-            [ '3A',      3.5],
-            [ '3B',    7]
-        ]);
-
-        var options = {
-            title: 'Average delay per route',
-            hAxis: {title: 'Route', minValue: 0, maxValue: 15},
-            vAxis: {title: 'Delay', minValue: 0, maxValue: 15},
-            legend: 'none'
-        };
-
-        var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
-
+        var data = google.visualization.arrayToDataTable(inputData);
+        var chart = new google.visualization.ScatterChart(document.getElementById(place));
         chart.draw(data, options);
     }
 }
@@ -59,9 +42,18 @@ window.onload = function() {
     mapVisuals();
 
     processAPI(
-        'get_routes',
+        'get_avg_pass',
         function(data) {
-            createPlot(data);
+            var chartData = [['Route', 'Average number']];
+            chartData.push(...data.results);
+            
+            var options = {
+                title: 'Average number of passengers per route',
+                hAxis: {title: 'Route'},
+                vAxis: {title: 'Average number'},
+                legend: 'none'
+            };
+            createScatterPlot(chartData, options, 'chart_div');
         }
     );
     processAPI(
@@ -73,7 +65,7 @@ window.onload = function() {
                 <h4>Routes in Barrie</h4>
             </div>
             <div class="card-body">
-                ${data.NumOfRoute}
+                ${data.num_of_routes}
             </div>`;
         }
     );
@@ -86,7 +78,7 @@ window.onload = function() {
                 <h4>Buses in Barrie</h4>
             </div>
             <div class="card-body">
-                ${data.NumOfVehicle}
+                ${data.num_of_vehicles}
             </div>`;
         }
     );
