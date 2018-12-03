@@ -16,6 +16,14 @@ class DB:
     def close(self):
         self.client.close()
 
+    def add_user(self, user, password):
+        # TODO: maybe only one-time by script, so not explicit registration
+        pass
+
+    def has_access(self, email, raw_password):
+        # TODO:
+        return True
+
     def insert_route(self, route):
         ref = None
         if ref:
