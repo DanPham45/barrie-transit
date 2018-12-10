@@ -107,6 +107,9 @@ def filter_vehicles(r):
 def get_all_vehicles():
     # GetRoutes
     route_r = requests.post(GET_ROUTES_ENDPOINT)
+
+    print(route_r.status_code, route_r)
+
     route_data = route_r.json()
 
     # GetVehicles

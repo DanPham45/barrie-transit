@@ -1,1 +1,9 @@
- #mapid { height: 500px; }
+ #mapid1 { height: 500px; }
+ #mapid2 { height: 500px; }
+ #mapid3 { height: 500px; }
+ #mapid4 { height: 500px; }
+ #mapid5 { height: 500px; }
+
+ #chart_div { height: 700px; }
+ #chart_stops_routes_avg { height: 700px; }
+ #chart_compare_routes { height: 700px; }

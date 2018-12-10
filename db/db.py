@@ -2,6 +2,8 @@
 Here we keep any web-DB related code
 """
 import json
+from collections import defaultdict
+
 from datetime import datetime
 from pymongo import MongoClient
 
@@ -91,3 +93,114 @@ class DB:
             [item['_id'], item['avgPassengers']]
             for item in results
         ]
+
+    def get_avg_route_stop(self):
+        result = self.db.vehicles.aggregate([{
+            '$match': {
+                'GpsDir':{
+                    '$exists': True, '$ne': None
+                }
+            }
+        },
+            {
+                '$group': {
+                    '_id': {
+                        'Route': "$PatternName",
+                        'Stop':"$NextStopName",
+                        'Long':"$GpsLong",
+                        'Lat': "$GpsLat",
+                        'DateTime': "$GpsDate"
+                    },
+                    'AvgPassengersOnBoard': {'$avg':"$PassengersOnboard"}
+                }
+            }
+        ])
+        number_map = {}
+        for item in result:
+            to_unpack = item['_id']
+            to_unpack.update({'avgPass': item['AvgPassengersOnBoard']})
+            
+            route_name = to_unpack['Route']
+            number_map[route_name] = number_map.get(route_name, len(number_map) + 1)
+            yield [route_name, number_map[route_name], float(to_unpack['avgPass']), to_unpack['Stop']]
+
+    def compare_routes(self):
+        result = self.db.vehicles.aggregate([
+            {
+                '$match': {
+                    'GpsDir': { '$exists': True, '$ne': None}
+                }
+            },
+            {
+                '$group': {
+                    '_id': {'Route': "$PatternName", 'Veh':"$VehicleKey", 'DateTime': "$GpsDate"},
+                    'AvgPassengersOnBoard': {'$avg':"$PassengersOnboard"},
+                    'AvgSpeed': {'$avg': "$GpsSpd"}
+            }
+            }
+        ])
+        for item in result:
+            r = item['_id']
+            r.update({'avgPass': item['AvgPassengersOnBoard']})
+            r.update({'avgSpeed': item['AvgSpeed']})
+            yield [r['Route'], r['avgPass'], r['avgSpeed']]
+
+    def delay_stat_week(self):
+        result = self.db.delaystatweekly.aggregate([
+            {
+                '$group': {
+                    '_id': {'Week': "$Week"},
+                    'AvgDelay': {'$avg': "$Avg Delay"},
+                    'MaxDelay': {'$max': "$Avg Delay"},
+                    'MinDelay': {'$min': "$Avg Delay"},
+                    'AvgStop': {'$avg':"$Stopping Time"},
+                    'MaxStop': {'$max': "$Stopping Time"},
+                    'MinStop': {'$min': "$Stopping Time"},
+                }
+            }
+        ])
+        return result.next()
+
+    def delay_stat_day(self):
+        result = self.db.delaystatdaily.aggregate([
+            {
+                '$group': {
+                    '_id': {'Day': "$Day"},
+                    'AvgDelay': {'$avg': "$Avg Delay"},
+                    'MaxDelay': {'$max': "$Avg Delay"},
+                    'MinDelay': {'$min': "$Avg Delay"},
+                    'AvgStop': {'$avg':"$Stopping Time"},
+                    'MaxStop': {'$max': "$Stopping Time"},
+                    'MinStop': {'$min': "$Stopping Time"}
+                }
+            }
+        ])
+        return result.next()
+
+    def avg_per_stop_location(self):
+        result = self.db.vehicles.aggregate([
+            {
+                '$match': {
+                    'GpsDir': {
+                    '$exists': True, '$ne': None
+                    }
+                }
+            },
+            {
+                '$group': {
+                    '_id': {
+                        'Route': "$PatternName",
+                        'Stop': "$NextStopName",
+                        'Long':"$GpsLong",
+                        'Lat': "$GpsLat",
+                        'AvgPassengersOnBoard': {'$avg':"$PassengersOnboard"},
+                        'DateTime': "$GpsDate"
+                    }
+                }
+            }
+        ])
+        per_route = defaultdict(list)
+        for item in result:
+            i = item['_id']
+            per_route[i['Route']].append([i['Stop'], i['Long'], i['Lat'], i['AvgPassengersOnBoard']])
+        return per_route

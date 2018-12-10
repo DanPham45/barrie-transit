@@ -89,3 +89,28 @@ def get_avg_pass():
     """
     db = get_db()
     return jsonify({'results': db.get_avg_per_route()})
+
+@app.route('/get_avg_route_stop')
+def get_avg_pass_route_stop():
+    """
+    TODO:
+    """
+    db = get_db()
+    return jsonify({'results': list(db.get_avg_route_stop())})
+
+@app.route('/get_compare_routes')
+def get_compare_routes():
+    """
+    TODO:
+    """
+    db = get_db()
+    return jsonify({'results': list(db.compare_routes())})
+
+
+@app.route('/get_avg_per_stop_location')
+def get_avg_per_stop_location():
+    """
+    TODO:
+    """
+    db = get_db()
+    return jsonify(db.avg_per_stop_location())
