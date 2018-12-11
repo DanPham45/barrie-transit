@@ -161,8 +161,6 @@ function buildMap() {
             let mind = document.getElementById("routeListBtn");
             mind.innerHTML = resultHtml;
 
-            console.log(resultHtml);
-
             mapVisuals('mapid1', data, routes[1]);
         }
     );
@@ -171,7 +169,7 @@ function buildMap() {
 window.onload = function() {
     getStats(1);
 
-    buildMap();
+    //buildMap();
 
     processAPI(
         'get_avg_pass',
