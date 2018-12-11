@@ -106,7 +106,8 @@ def get_avg_pass_route_stop():
     TODO:
     """
     db = get_db()
-    return jsonify({'results': list(db.get_avg_route_stop())})
+    data = list(db.get_avg_route_stop())
+    return jsonify({'results': data})
 
 @app.route('/get_compare_routes')
 def get_compare_routes():
