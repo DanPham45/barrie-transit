@@ -163,7 +163,7 @@ function buildMap() {
 
             console.log(resultHtml);
 
-            mapVisuals('mapid1', data, routes[0]);
+            mapVisuals('mapid1', data, routes[1]);
         }
     );
 }

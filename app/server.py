@@ -68,3 +68,6 @@ def run():
         app.run(debug=debug, host=host, port=int(port))
     else:
         app.run(debug=debug)
+
+if __name__ == "__main__":
+    run()
