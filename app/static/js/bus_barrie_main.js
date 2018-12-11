@@ -187,21 +187,21 @@ window.onload = function() {
         }
     );
 
-    // processAPI(
-    //     'get_avg_route_stop',
-    //     function(data) {
-    //         var chartData = [['Route', 'N', 'Avg Pass', 'Stop']];
-    //         chartData.push(...data.results);
+    processAPI(
+        'get_avg_route_stop',
+        function(data) {
+            var chartData = [['Route', 'N', 'Avg Pass', 'Stop']];
+            chartData.push(...data.results);
 
-    //         var options = {
-    //             title: 'Average number of passengers per route per stop',
-    //             hAxis: {title: 'Route'},
-    //             vAxis: {title: 'Average number'},
-    //             legend: 'none'
-    //         };
-    //         createBubbleChart(chartData, options, 'chart_stops_routes_avg');
-    //     }
-    // );
+            var options = {
+                title: 'Average number of passengers per route per stop',
+                hAxis: {title: 'Route'},
+                vAxis: {title: 'Average number'},
+                legend: 'none'
+            };
+            createBubbleChart(chartData, options, 'chart_stops_routes_avg');
+        }
+    );
 
     processAPI(
         'get_compare_routes',
