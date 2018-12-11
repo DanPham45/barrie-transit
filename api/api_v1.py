@@ -10,6 +10,7 @@ from flask import (
     Blueprint,
     jsonify,
 )
+from funcy import omit
 
 from app.utils import get_db
 
@@ -27,7 +28,7 @@ def get_route_names():
     """
     db = get_db()
     cursor = db.get_all_routes_name()
-    routes = [route for route in cursor]
+    routes = [route for route in cursor][:5]
     return jsonify({'routes': routes})
 
 @app.route('/get_bus_num')
@@ -59,6 +60,15 @@ def get_routes_num():
     db = get_db()
     number = db.get_number_of_routes()
     return jsonify({'num_of_routes': number.get('NumOfRoute')})
+
+@app.route('/get_records_num')
+def get_records_num():
+    """
+    TODO:
+    """
+    db = get_db()
+    number = db.get_loc_count()
+    return jsonify({'num_of_records': number})
 
 @app.route('/get_track_days')
 def get_track_days():
@@ -106,7 +116,6 @@ def get_compare_routes():
     db = get_db()
     return jsonify({'results': list(db.compare_routes())})
 
-
 @app.route('/get_avg_per_stop_location')
 def get_avg_per_stop_location():
     """
@@ -114,3 +123,19 @@ def get_avg_per_stop_location():
     """
     db = get_db()
     return jsonify(db.avg_per_stop_location())
+
+@app.route('/get_stats/<int:term>')
+def get_stats(term):
+    """
+    TODO:
+    1 - week
+    0 - day
+    """
+    db = get_db()
+    if term:
+        data = db.delay_stat_week()
+    else:
+        data = db.delay_stat_day()
+
+    data = {k:f'{v:.2f}' for k, v in omit(data, '_id').items()}
+    return jsonify(data)

@@ -26,26 +26,8 @@ class DB:
         # TODO:
         return True
 
-    def insert_route(self, route):
-        ref = None
-        if ref:
-            self.db.update({'ref': ref}, {'$push': {'routes': route}})
-        else:
-            self.db.insert_one({'routes': [route]})
-
-    def insert_location(self, location):
-        ref = None
-        if ref:
-            self.db.update({'ref': ref}, {'$push': {'locations': location}})
-        else:
-            self.db.insert_one({'locations': [location]})
-
-    def get_locations(self, location=None, route=None, time=None):
-        return self.db.find({k: v for k, v in [
-            ('location', location),
-            ('route', route),
-            ('time', time)
-        ]})
+    def get_loc_count(self):
+        return self.db.vehicles.count()
 
     def get_all_routes_name(self):
         return self.db.routes.find().distinct('RouteShortName')
@@ -105,7 +87,7 @@ class DB:
             {
                 '$group': {
                     '_id': {
-                        'Route': "$PatternName",
+                        'Route': "$RouteShortName",
                         'Stop':"$NextStopName",
                         'Long':"$GpsLong",
                         'Lat': "$GpsLat",
@@ -133,7 +115,7 @@ class DB:
             },
             {
                 '$group': {
-                    '_id': {'Route': "$PatternName", 'Veh':"$VehicleKey", 'DateTime': "$GpsDate"},
+                    '_id': {'Route': "$RouteShortName", 'Veh':"$VehicleKey", 'DateTime': "$GpsDate"},
                     'AvgPassengersOnBoard': {'$avg':"$PassengersOnboard"},
                     'AvgSpeed': {'$avg': "$GpsSpd"}
             }
@@ -189,7 +171,7 @@ class DB:
             {
                 '$group': {
                     '_id': {
-                        'Route': "$PatternName",
+                        'Route': "$RouteShortName",
                         'Stop': "$NextStopName",
                         'Long':"$GpsLong",
                         'Lat': "$GpsLat",
@@ -200,7 +182,7 @@ class DB:
             }
         ])
         per_route = defaultdict(list)
-        for item in result:
+        for item in list(result)[:10]:
             i = item['_id']
             per_route[i['Route']].append([i['Stop'], i['Long'], i['Lat'], i['AvgPassengersOnBoard']])
         return per_route

@@ -46,106 +46,6 @@ function getLine(points, color){
     return line;
 }
 
-
-function getColor(d) {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-
-}
-
-
-function mapVisuals(mapid, data) {     
-    var mymap = L.map(mapid).setView([44.35184883333333, -79.6284255], 10);
-
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox.streets',
-        accessToken: 'pk.eyJ1IjoiaGFza3BwcCIsImEiOiJjanAzOHFscDQwNWRvM2twZXlxMTNocmRpIn0.-fR_k4Aw9WSYPqlX6NHfHA'
-    }).addTo(mymap);
-
-    // const colors = [];
-    // for (var i = 0; i < data.length; i += 1) {
-    //     colors.push('#'+();
-    // }
-
-    var indexColor = 0;
-    Object.keys(data).forEach(function(key) {
-
-        var d = data[key];
-        var points = [];
-        for(var i = 0; i < d.length; i++) {
-            points.push({'lat': d[i][2], 'lon': d[i][1]});
-        }
-        var line = getLine(points, getColor(indexColor++));
-        line.addTo(mymap);
-        mymap.fitBounds(line.getBounds());
-      
-    });
-
-
-    // var latlang = [
-    //     [[17.385044, 78.486671], [16.506174, 80.648015], [17.686816, 83.218482]],
-    //     [[13.082680, 80.270718], [12.971599, 77.594563],[15.828126, 78.037279]]
-    //  ];
-     
-    //  // Creating poly line options
-    //  var multiPolyLineOptions = {color:'red'};
-     
-    //  // Creating multi poly-lines
-    //  var multipolyline = L.multiPolyline(latlang , multiPolyLineOptions);
-     
-    //  // Adding multi poly-line to map
-    //  multipolyline.addTo(mymap);
-    // console.log(points, line);
-    // var j;
-    // var temppoints=[];
-    // //draw lines
-    // for(j=0;j<static.length-1;j++){
-    //     temppoints[0]=static[j];
-    //     temppoints[1]=static[j+1];
-    //     var temppoly=colorPoints(temppoints,getColor(temppoints[0]['capacity']));
-    //     temppoly.addTo(mymap);
-    // }
-    // //set labels
-    // for(j=0;j<static.length;j++)
-    // {
-    //     var marker = L.marker([static[j]['latitude'],static[j]['longitude']]).addTo(mymap);
-    //     //marker.bindTooltip(static[j]['stop_code'],{permanent:true,direction:'right'})
-    //     marker.bindPopup("<b>Bus Stop: "+static[j]['stop_code']+"</b><br>Here is "+static[j]['stop_name']).openPopup();
-    // }
-
-    // var legend = L.control({position: 'bottomright'});
-    // legend.onAdd = function (map) {
-    //     var div = L.DomUtil.create('div', 'info legend'),
-    //         grades = [10, 20, 30, 40, 50, 60, 70, 80],
-    //         labels = ['a', 'd', 'c', 'b'];
-    //     // loop through our density intervals and generate a label with a colored square for each interval
-    //     for (var i = 0; i < grades.length; i++) {
-    //         div.innerHTML +=
-    //             '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-    //             grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
-    //     }
-
-    //     return div;
-    // };
-}
-
-function compareRoutes(data) {
-    var mymap = L.map(mapid).setView([44.35184883333333, -79.6284255], 10);
-
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox.streets',
-        accessToken: 'pk.eyJ1IjoiaGFza3BwcCIsImEiOiJjanAzOHFscDQwNWRvM2twZXlxMTNocmRpIn0.-fR_k4Aw9WSYPqlX6NHfHA'
-    }).addTo(mymap);
-}
-
 function processAPI(path, func) {
     fetch(`./api_v1/${path}`)
     .then(
@@ -164,14 +64,114 @@ function processAPI(path, func) {
     });
 }
 
+function fill_stats(data, t) {
+    let avgs = document.getElementById("stats_avgs");
+    avgs.innerHTML = `
+    <div class="detail-value">${data.AvgStop} minutes</div>
+    <div class="detail-name">Average waiting time on stops today</div>`;
 
-window.onload = function() {
+    let maxs = document.getElementById("stats_maxs");
+    maxs.innerHTML = `
+    <div class="detail-value">${data.MaxStop} minutes</div>
+    <div class="detail-name">Max waiting time on stops today</div>`;
+
+    let mins = document.getElementById("stats_mins");
+    mins.innerHTML = `
+    <div class="detail-value">${data.MinStop} minutes</div>
+    <div class="detail-name">Min waiting time on stops today</div>`;
+
+    let avgd = document.getElementById("stats_avgd");
+    avgd.innerHTML = `
+    <div class="detail-value">${data.AvgDelay} minutes</div>
+    <div class="detail-name">Average delay today</div>`;
+
+    let maxd = document.getElementById("stats_maxd");
+    maxd.innerHTML = `
+    <div class="detail-value">${data.MaxDelay} minutes</div>
+    <div class="detail-name">Max delay today</div>`;
+
+    let mind = document.getElementById("stats_mind");
+    mind.innerHTML = `
+    <div class="detail-value">${data.MinDelay} minutes</div>
+    <div class="detail-name">Min delay today</div>`;
+
+    if (t == 0) {
+        document.getElementById("day_stat_btn").classList.add('active');
+        document.getElementById("week_stat_btn").classList.remove('active');
+    }
+    else if (t == 1) {
+        document.getElementById("week_stat_btn").classList.add('active');
+        document.getElementById("day_stat_btn").classList.remove('active');
+    }
+}
+
+function getStats(t) {
+    processAPI(
+        `get_stats/${t}`,
+        function(data) {
+            fill_stats(data, t);
+        }
+    );
+}
+
+function mapVisuals(mapid, data, routeName) {
+    var mymap = L.map(mapid).setView([44.35184883333333, -79.6284255], 10);
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox.streets',
+        accessToken: 'pk.eyJ1IjoiaGFza3BwcCIsImEiOiJjanAzOHFscDQwNWRvM2twZXlxMTNocmRpIn0.-fR_k4Aw9WSYPqlX6NHfHA'
+    }).addTo(mymap);
+
+    var d = data[routeName];
+    for(var i = 0; i < d.length; i++) {
+        var numberIcon = L.divIcon({
+            className: "number-icon",
+            iconSize: [25, 41],
+            iconAnchor: [10, 44],
+            popupAnchor: [3, -40],
+            html: d[i][3],        
+        });
+        var marker = new L.marker([d[i][2], d[i][1]], { icon: numberIcon });
+        marker.addTo(mymap);
+    }
+}
+
+function onClickRoute(routeName) {
     processAPI(
         'get_avg_per_stop_location',
         function(data) {
-            mapVisuals('mapid1', data);
+            mapVisuals('mapid1', data, routeName);
         }
     );
+}
+
+function buildMap() {
+    processAPI(
+        'get_avg_per_stop_location',
+        function(data) {
+            let resultHtml = ``;
+            let routes = Object.keys(data);
+
+            resultHtml += `<a href="#" onclick="onClickRoute('${routes[0]}');" class="btn active">${routes[0]}</a>`;
+            routes.slice(1).forEach(function (route) {
+                resultHtml += `<a href="#" onclick="onClickRoute('${route}');" class="btn">${route}</a>`;
+            });
+
+            let mind = document.getElementById("routeListBtn");
+            mind.innerHTML = resultHtml;
+
+            console.log(resultHtml);
+
+            mapVisuals('mapid1', data, routes[0]);
+        }
+    );
+}
+
+window.onload = function() {
+    getStats(1);
+
+    buildMap();
 
     processAPI(
         'get_avg_pass',
@@ -259,6 +259,13 @@ window.onload = function() {
             <div class="card-body">
                 ${data.days}
             </div>`;
+        }
+    );
+    processAPI(
+        'get_records_num',
+        function(data) {
+            let daystackbag = document.getElementById("locrecnum");
+            daystackbag.innerHTML = data.num_of_records;
         }
     );
 }
