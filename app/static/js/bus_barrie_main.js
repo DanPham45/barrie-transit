@@ -169,7 +169,7 @@ function buildMap() {
 window.onload = function() {
     getStats(1);
 
-    //buildMap();
+    buildMap();
 
     processAPI(
         'get_avg_pass',
