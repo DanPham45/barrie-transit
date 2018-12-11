@@ -27,9 +27,9 @@ db = get_db()
 
 @app.route('/')
 def index():
-    email = session.get('email')
-    if not email:
-        return redirect(url_for('login'))
+    # email = session.get('email')
+    # if not email:
+    #     return redirect(url_for('login'))
     return render_template('index.html')
 
 @app.route('/login', methods=['GET', 'POST'])
