@@ -23,8 +23,8 @@ class DB:
         pass
 
     def has_access(self, email, raw_password):
-        # TODO:
-        return True
+        # TODO: only for demo, fix this hack, hash password and save in db
+        return email == "test@test.com" and raw_password == "test"
 
     def get_loc_count(self):
         return self.db.vehicles.count()
