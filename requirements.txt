@@ -2,7 +2,7 @@ alembic==1.0.0
 funcy==1.11
 amqp==2.3.2
 aniso8601==4.0.1
-arrow==0.12.1
+arrow==0.15.1
 asn1crypto==0.24.0
 Babel==2.6.0
 billiard==3.5.0.4
